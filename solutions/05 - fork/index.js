@@ -5,8 +5,13 @@ const {startTimer} = require('../../lib/timer');
 
 // const fork = util.promisify(require('child_process').fork);
 
+function logNthPrime(n) {
+    fork(require.resolve('./logNthPrime'), [n]);
+    console.info(`The ${ordinalize(n)} prime is ${findNthPrime(n)}`);
+}
+
 startTimer(3);
 
-fork(require.resolve('./findNthPrime'), [200000]);
-fork(require.resolve('./findNthPrime'), [150000]);
-fork(require.resolve('./findNthPrime'), [100000]);
+logNthPrime(200000);
+logNthPrime(150000);
+logNthPrime(100000);
