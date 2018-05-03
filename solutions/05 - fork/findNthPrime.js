@@ -4,9 +4,9 @@ process.on('unhandledRejection', err => {
     throw err;
 });
 
-const {startTimer} = require('../lib/timer');
-const {findNthPrime} = require('../lib/primes');
-const {ordinalize} = require('../lib/lang');
+const {startTimer} = require('../../lib/timer');
+const {findNthPrime} = require('../../lib/primes');
+const {ordinalize} = require('../../lib/lang');
 
 async function logNthPrime(n) {
     return new Promise(resolve => {
